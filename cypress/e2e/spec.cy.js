@@ -6,7 +6,7 @@ describe('Opening clear trip website', () => {
 
 describe('Selecting From', () => {
   it('Should select valid origin', () => {
-    cy.get('input[class = "field bw-1 bs-solid w-100p p-2 box-border br-4 fs-2 c-neutral-900 h-8 bc-neutral-100 c-neutral-900 focus:bc-secondary-500 flex flex-middle flex-between t-all fs-2 focus:bc-secondary-500 bg-transparent bc-neutral-100 pr-2 pl-3 pt-2 pb-2 ba br-4 h-8 null"]')
+    cy.get('input[class ="field bw-1 bs-solid w-100p p-2 box-border br-4 fs-2 c-neutral-900 h-8 bc-neutral-100 c-neutral-900 focus:bc-secondary-500 flex flex-middle flex-between t-all fs-2 focus:bc-secondary-500 bg-transparent bc-neutral-100 pr-2 pl-3 pt-2 pb-2 ba br-4 h-8 null"]')
     .clear().type("Bangalore").then (() => {
       cy.wait(1000)
       cy.get('div').get('[class = "bg-white br-4 elevation-5 p-1 p-absolute mt-1 z-50 l-0"]').children('ul').children('li').first()
@@ -43,7 +43,7 @@ describe('selecting date', () => {
 describe('Book flight', () => {
   it('should book flight', () => {
     cy.get('div').get('button').contains('Search flights').click().then(() => {
-      cy.get('button').contains('Book').click()
+      cy.get('div').get('[data-testid = "tupple"]').first().get('button').contains('Book').click()
     })
   })
 })
