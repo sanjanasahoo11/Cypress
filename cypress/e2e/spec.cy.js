@@ -43,9 +43,8 @@ describe('selecting date', () => {
 describe('Book flight', () => {
   it('should book flight', () => {
     cy.get('div').get('button').contains('Search flights').click().then(() => {
+      cy.url().should('include', '/results')
       cy.get('div').get('[data-testid = "tupple"]').first().get('button').contains('Book').click()
     })
   })
 })
-
-//new
